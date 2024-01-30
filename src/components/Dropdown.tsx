@@ -11,7 +11,7 @@ export function Dropdown() {
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
-        <DropdownMenu.Content className="mt-2 flex flex-col gap-2 rounded-md bg-white p-2 drop-shadow">
+        <DropdownMenu.Content className="mt-2 flex flex-col gap-2 rounded-md bg-white p-2 shadow-md">
           <DropdownMenu.Item className="text-base font-normal text-gray-900 outline-none">
             Entrar
           </DropdownMenu.Item>

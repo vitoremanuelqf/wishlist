@@ -1,10 +1,11 @@
-import Image from 'next/image'
+'use client'
+
 import Link from 'next/link'
 
 export function Logo() {
   return (
     <Link href={'/'}>
-      <Image
+      <img
         alt={'Logo da Netshoes.'}
         src={'/img/png/logo.png'}
         width={4096}
