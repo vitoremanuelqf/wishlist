@@ -1,3 +1,5 @@
+'use client'
+
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { FaUserCircle } from 'react-icons/fa'
 
@@ -12,23 +14,23 @@ export function Dropdown() {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content className="mt-2 flex flex-col gap-2 rounded-md bg-white p-2 shadow-md">
-          <DropdownMenu.Item className="text-base font-normal text-gray-900 outline-none">
+          <DropdownMenu.Item className="cursor-not-allowed text-base font-normal text-gray-900 outline-none">
             Entrar
           </DropdownMenu.Item>
 
-          <DropdownMenu.Item className="text-base font-normal text-gray-900 outline-none">
+          <DropdownMenu.Item className="cursor-not-allowed text-base font-normal text-gray-900 outline-none">
             Minha Conta
           </DropdownMenu.Item>
 
-          <DropdownMenu.Item className="text-base font-normal text-gray-900 outline-none">
+          <DropdownMenu.Item className="cursor-not-allowed text-base font-normal text-gray-900 outline-none">
             Endereços
           </DropdownMenu.Item>
 
-          <DropdownMenu.Item className="text-base font-normal text-gray-900 outline-none">
+          <DropdownMenu.Item className="cursor-not-allowed text-base font-normal text-gray-900 outline-none">
             Minha Netshoes
           </DropdownMenu.Item>
 
-          <DropdownMenu.Arrow className="fill-white" />
+          <DropdownMenu.Arrow className="-mt-2 fill-white" />
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>

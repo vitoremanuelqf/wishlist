@@ -1,19 +1,45 @@
 'use client'
 
-import { FaRegStar, FaStar } from 'react-icons/fa'
+import { FaRegHeart, FaRegStar, FaStar } from 'react-icons/fa'
+import { MdOutlineClose } from 'react-icons/md'
 
-import { Product } from '~/types/product'
+import { useWishlist } from '~/hooks/useWishlist'
+import { IProduct } from '~/types/product'
 import { priceFormatter } from '~/utils/priceFormatter'
 
-interface ProductItemProps {
-  data: Product
+interface IProductItemProps {
+  data: IProduct
 }
 
-export function ProductItem({ data }: ProductItemProps) {
+export function Product({ data }: IProductItemProps) {
+  const { wishlist } = useWishlist()
+
   const renderRating = Array.from({ length: 5 }, (_, index) => index + 1)
 
+  const { addFavoriteToWishlist, deleteFavoriteToWishlist } = useWishlist()
+
+  const actions = {
+    add: () => addFavoriteToWishlist(data),
+    remove: () => deleteFavoriteToWishlist(data),
+  }
+
+  const actionType =
+    wishlist.filter((product) => product.id === data.id).length > 0
+      ? 'remove'
+      : 'add'
+
   return (
-    <div className="flex w-full flex-col gap-1 rounded-md border border-gray-300 p-3 shadow-md">
+    <div className="relative flex w-full flex-col gap-1 rounded-md border border-gray-300 p-3 shadow-md">
+      <button
+        onClick={actions[actionType]}
+        className=" absolute right-5 top-5 z-10 flex h-9 w-9 items-center justify-center rounded-full border  bg-gray-400 shadow-sm transition-all duration-150 hover:h-10 hover:w-10"
+      >
+        {actionType === 'add' && <FaRegHeart className="h-6 w-6 text-white" />}
+        {actionType === 'remove' && (
+          <MdOutlineClose className="h-6 w-6 text-white" />
+        )}
+      </button>
+
       <div className="relative flex aspect-square w-full items-center justify-center rounded-md border border-gray-300">
         <img
           alt={data.alt}

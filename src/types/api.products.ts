@@ -45,7 +45,7 @@ export interface Product {
   stockAvailable: boolean
 }
 
-export interface Root {
+export interface IAPIRoot {
   total: number
   pageSize: number
   totalPages: number

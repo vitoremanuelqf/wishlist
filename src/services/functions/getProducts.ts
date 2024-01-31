@@ -11,8 +11,8 @@ export const getProducts = async (): Promise<Product[] | []> => {
       const data: Root = response.data
 
       const products = data.products.map((item) => {
-        const fakeRating = Math.floor(Math.random() * 5) + 1
-        const fakePrice = Math.floor(Math.random() * (500 - 100 + 1)) + 100
+        const fakeRating = 4
+        const fakePrice = 299
 
         return {
           id: item.product.code,
