@@ -9,9 +9,10 @@ import { priceFormatter } from '~/utils/priceFormatter'
 
 interface IProductItemProps {
   data: IProduct
+  productType: 'home' | 'wishlist'
 }
 
-export function Product({ data }: IProductItemProps) {
+export function Product({ data, productType }: IProductItemProps) {
   const { wishlist } = useWishlist()
 
   const renderRating = Array.from({ length: 5 }, (_, index) => index + 1)
@@ -29,16 +30,33 @@ export function Product({ data }: IProductItemProps) {
       : 'add'
 
   return (
-    <div className="relative flex w-full flex-col gap-1 rounded-md border border-gray-300 p-3 shadow-md">
-      <button
-        onClick={actions[actionType]}
-        className=" absolute right-5 top-5 z-10 flex h-9 w-9 items-center justify-center rounded-full border  bg-gray-400 shadow-sm transition-all duration-150 hover:h-10 hover:w-10"
-      >
-        {actionType === 'add' && <FaRegHeart className="h-6 w-6 text-white" />}
-        {actionType === 'remove' && (
-          <MdOutlineClose className="h-6 w-6 text-white" />
-        )}
-      </button>
+    <div className="relative flex w-full flex-col gap-0.5 rounded-md border border-gray-300 p-2 shadow-md sm:gap-1 sm:p-3">
+      {actionType === 'add' && productType === 'home' && (
+        <button
+          onClick={actions[actionType]}
+          className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full border bg-gray-400 shadow-sm transition-all duration-150  hover:h-10 hover:w-10 sm:right-5 sm:top-5 sm:h-9 sm:w-9"
+        >
+          <FaRegHeart className="h-4 w-4 text-white sm:h-6 sm:w-6" />
+        </button>
+      )}
+
+      {actionType === 'remove' && productType === 'home' && (
+        <button
+          onClick={actions[actionType]}
+          className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full border bg-red-500 shadow-sm transition-all duration-150  hover:h-10 hover:w-10 sm:right-5 sm:top-5 sm:h-9 sm:w-9"
+        >
+          <FaRegHeart className="h-4 w-4 text-white sm:h-6 sm:w-6" />
+        </button>
+      )}
+
+      {actionType === 'remove' && productType === 'wishlist' && (
+        <button
+          onClick={actions[actionType]}
+          className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full border bg-gray-400 shadow-sm transition-all duration-150  hover:h-10 hover:w-10 sm:right-5 sm:top-5 sm:h-9 sm:w-9"
+        >
+          <MdOutlineClose className="h-4 w-4 text-white sm:h-6 sm:w-6" />
+        </button>
+      )}
 
       <div className="relative flex aspect-square w-full items-center justify-center rounded-md border border-gray-300">
         <img
