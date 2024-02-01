@@ -1,15 +1,21 @@
 import { Breadcrumb } from '~/components/Breadcrumb'
-import { ProductList } from '~/components/ProductList'
+import { Product } from '~/components/Product'
 import { getProducts } from '~/services/functions/getProducts'
 
 export default async function Home() {
   const products = await getProducts()
 
   return (
-    <div className="flex h-auto w-full max-w-7xl flex-col gap-5 p-3 md:p-5">
-      <Breadcrumb routes={['Home']} />
+    <main className="flex h-auto w-full justify-center bg-white">
+      <div className="flex h-auto w-full max-w-7xl flex-col items-center justify-between gap-2 px-4 pb-10 pt-2 sm:gap-4 sm:px-8">
+        <Breadcrumb routes={[{ name: 'Home', url: '/' }]} />
 
-      <ProductList data={products} />
-    </div>
+        <div className="grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
+          {products.map((product) => (
+            <Product key={product.id} data={product} productType={'home'} />
+          ))}
+        </div>
+      </div>
+    </main>
   )
 }
