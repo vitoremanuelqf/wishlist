@@ -8,12 +8,12 @@ export function Dropdown() {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button className="outline-none">
-          <FaUserCircle className="h-8 w-8 text-white" />
+          <FaUserCircle className="h-6 w-6 text-white sm:h-8 sm:w-8" />
         </button>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
-        <DropdownMenu.Content className="mt-2 flex flex-col gap-2 rounded-md bg-white p-2 shadow-md">
+        <DropdownMenu.Content className="mr-2 mt-2 flex flex-col gap-1 rounded-md bg-white p-2 shadow-md">
           <DropdownMenu.Item className="cursor-not-allowed text-base font-normal text-gray-900 outline-none">
             Entrar
           </DropdownMenu.Item>
