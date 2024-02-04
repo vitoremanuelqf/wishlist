@@ -4,6 +4,6 @@ export interface IProduct {
   src?: string
   title: string
   rating: number
-  fullPrice: number
-  finalPrice: number
+  fullPrice: string
+  finalPrice: string
 }

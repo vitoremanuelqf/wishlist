@@ -3,6 +3,7 @@ import { AxiosError } from 'axios'
 import { api } from '~/services/axios'
 import { IAPIRoot } from '~/types/api.products'
 import { IProduct } from '~/types/product'
+import { priceFormatter } from '~/utils/priceFormatter'
 
 export const getProducts = async (): Promise<IProduct[] | []> => {
   const products = await api
@@ -20,8 +21,8 @@ export const getProducts = async (): Promise<IProduct[] | []> => {
           src: item.product?.image || '',
           title: item.product.details.name,
           rating: fakeRating,
-          fullPrice: fakePrice,
-          finalPrice: fakePrice / 2,
+          fullPrice: priceFormatter.format(fakePrice),
+          finalPrice: priceFormatter.format(fakePrice / 2),
         }
       })
 
