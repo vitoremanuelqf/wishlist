@@ -3,12 +3,12 @@
 import Link from 'next/link'
 import { FaRegHeart } from 'react-icons/fa'
 
-import { useWishlist } from '~/hooks/useWishlist'
+import { useWishlist } from '../../hooks/useWishlist'
 
 export function Navigation() {
   const { wishlist } = useWishlist()
 
-  const wishlistLength = wishlist.length
+  const wishlistLength = wishlist?.length || 0
 
   return (
     <ul className="flex items-center">

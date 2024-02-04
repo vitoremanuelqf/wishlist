@@ -1,4 +1,3 @@
-import { getCookie, setCookie } from 'cookies-next'
 import { createContext, useEffect, useState } from 'react'
 
 import { IProduct } from '~/types/product'
@@ -25,7 +24,7 @@ export function WishlistContextProvider({
 
   async function getWishlist() {
     try {
-      const storage = getCookie('@netshoes:wishlist')
+      const storage = localStorage.getItem('@netshoes:wishlist')
 
       const wishlist: IProduct[] = storage ? JSON.parse(storage) : []
 
@@ -39,9 +38,9 @@ export function WishlistContextProvider({
 
   async function addFavoriteToWishlist(addFavorite: IProduct) {
     try {
-      const storage = JSON.stringify([...wishlist, addFavorite])
+      const storage = [...wishlist, addFavorite]
 
-      setCookie('@netshoes:wishlist', storage)
+      localStorage.setItem('@netshoes:wishlist', JSON.stringify(storage))
 
       setWishlist([...wishlist, addFavorite])
     } catch (error) {
@@ -57,11 +56,11 @@ export function WishlistContextProvider({
         (favorite) => favorite.id !== deleteFavorite.id,
       )
 
-      setCookie('@netshoes:wishlist', storage)
+      localStorage.setItem('@netshoes:wishlist', JSON.stringify(storage))
 
       setWishlist(storage)
     } catch (error) {
-      console.error('Não foi possível exluir o item da Wishlist.', error)
+      console.error('Não foi possível exluir o item na Wishlist.', error)
 
       setWishlist([])
     }

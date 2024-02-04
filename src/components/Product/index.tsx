@@ -3,10 +3,9 @@
 import { FaRegHeart, FaRegStar, FaStar } from 'react-icons/fa'
 import { MdOutlineClose } from 'react-icons/md'
 
-import { useWishlist } from '~/hooks/useWishlist'
 import { IProduct } from '~/types/product'
-import { priceFormatter } from '~/utils/priceFormatter'
 
+import { useWishlist } from '../../hooks/useWishlist'
 import { FavoriteButton } from './FavoriteButton'
 
 interface IProductItemProps {
@@ -27,7 +26,7 @@ export function Product({ data, productType }: IProductItemProps) {
   }
 
   const actionType =
-    wishlist.filter((product) => product.id === data.id).length > 0
+    wishlist?.filter((product) => product.id === data.id).length > 0
       ? 'remove'
       : 'add'
 
@@ -76,11 +75,11 @@ export function Product({ data, productType }: IProductItemProps) {
       </div>
 
       <span className="text-sm font-normal text-gray-300 line-through sm:text-base">
-        {priceFormatter.format(data?.fullPrice)}
+        {data?.fullPrice}
       </span>
 
       <p className="text-base font-bold text-[#5b2b84] sm:text-lg">
-        {priceFormatter.format(data?.finalPrice)}
+        {data?.finalPrice}
       </p>
     </div>
   )
