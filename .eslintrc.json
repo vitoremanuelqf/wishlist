@@ -1,14 +1,15 @@
 {
   "extends": [
-    "@rocketseat/eslint-config/next", 
+    "@rocketseat/eslint-config/next",
     "next/core-web-vitals"
   ],
 
   "plugins": [
     "simple-import-sort"
   ],
-  
+
   "rules": {
+    "@next/next/no-img-element": "off",
     "simple-import-sort/imports": "error"
   }
 }
