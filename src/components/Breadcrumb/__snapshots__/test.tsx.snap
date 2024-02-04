@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Breadcrumb /> should render the correct links 1`] = `
+<div
+  class="flex h-auto w-full items-center border-b-[1px] border-b-gray-300 py-2 sm:py-4"
+>
+  <a
+    class="mr-1 text-xl text-[#5b2b84] sm:text-2xl font-normal"
+    href="/"
+  >
+    Home
+     /
+  </a>
+  <a
+    class="mr-1 text-xl text-[#5b2b84] sm:text-2xl font-bold"
+    href="/wishlist"
+  >
+    Wishlist
+  </a>
+</div>
+`;
