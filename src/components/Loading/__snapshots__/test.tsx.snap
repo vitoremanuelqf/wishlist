@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loading /> should render the loading 1`] = `
+<div
+  class="animate__animated animate__zoomIn w=full flex h-auto max-w-96 flex-col items-center justify-center gap-2 py-6 sm:py-8"
+>
+  <div
+    class="flex h-min w-min items-center justify-center rounded-full border border-gray-700 bg-[#5b2b84] p-4"
+  >
+    <svg
+      class="animate__animated animate__heartBeat animate__infinite h-8 w-8 text-white"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polyline
+        points="22 12 16 12 14 15 10 15 8 12 2 12"
+      />
+      <path
+        d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+      />
+    </svg>
+  </div>
+  <h2
+    class="text-center text-base font-medium text-gray-700 sm:text-xl"
+  >
+    Carregando...
+  </h2>
+</div>
+`;
