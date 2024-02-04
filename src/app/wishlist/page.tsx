@@ -3,11 +3,12 @@
 import { FiInbox } from 'react-icons/fi'
 
 import { Breadcrumb } from '~/components/Breadcrumb'
+import { Loading } from '~/components/Loading'
 import { Product } from '~/components/Product'
 import { useWishlist } from '~/hooks/useWishlist'
 
 export default function Wishlist() {
-  const { wishlist } = useWishlist()
+  const { loading, wishlist } = useWishlist()
 
   return (
     <main className="flex h-auto w-full justify-center bg-white">
@@ -19,7 +20,9 @@ export default function Wishlist() {
           ]}
         />
 
-        {wishlist.length > 0 && (
+        {loading && <Loading />}
+
+        {wishlist.length > 0 && !loading && (
           <div className="grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
             {wishlist.map((product) => (
               <Product
@@ -31,7 +34,7 @@ export default function Wishlist() {
           </div>
         )}
 
-        {wishlist.length <= 0 && (
+        {wishlist.length <= 0 && !loading && (
           <div className="animate__animated animate__zoomIn w=full flex h-auto max-w-96 flex-col items-center justify-center gap-2 py-6 sm:py-8">
             <div className="flex h-min w-min items-center justify-center rounded-full border border-gray-700 bg-[#5b2b84] p-4">
               <FiInbox className="h-12 w-12 text-white" />

@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from 'react'
 import { IProduct } from '~/types/product'
 
 interface WishlistContextDataProps {
+  loading: boolean
   wishlist: IProduct[]
 
   addFavoriteToWishlist: (addFavorite: IProduct) => void
@@ -20,19 +21,24 @@ export const WishlistContext = createContext<WishlistContextDataProps>(
 export function WishlistContextProvider({
   children,
 }: WishlistContextProviderProps) {
+  const [loading, setLoading] = useState(false)
   const [wishlist, setWishlist] = useState<IProduct[]>([])
 
   async function getWishlist() {
+    setLoading(true)
+
     try {
       const storage = localStorage.getItem('@netshoes:wishlist')
 
       const wishlist: IProduct[] = storage ? JSON.parse(storage) : []
 
       setWishlist(wishlist)
+      setLoading(false)
     } catch (error) {
       console.error('Erro ao listar os itens na Wishlist.', error)
 
       setWishlist([])
+      setLoading(false)
     }
   }
 
@@ -73,6 +79,7 @@ export function WishlistContextProvider({
   return (
     <WishlistContext.Provider
       value={{
+        loading,
         wishlist,
         addFavoriteToWishlist,
         deleteFavoriteToWishlist,
