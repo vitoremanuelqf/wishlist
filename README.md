@@ -88,7 +88,7 @@
   <h3>Clone o projeto e acesse a pasta:</h3>
 
   ```bash
-  $ git clone git@github.com:vitoremanuelqf/wishlist.git && cd challenge-charlie
+  $ git clone git@github.com:vitoremanuelqf/wishlist.git && cd wishlist
   ```
 
   <h3>Siga os passos abaixo para executar a aplicação localmente:</h3>
