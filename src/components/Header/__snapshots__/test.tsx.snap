@@ -1,34 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Logo /> should render the elements in the header, logo, navigation, and dropdown list. 1`] = `
-<a
-  href="/"
->
-  <img
-    alt="Logo da Netshoes."
-    class="h-6 w-auto object-contain sm:h-8"
-    height="521"
-    src="/img/png/logo.png"
-    width="4096"
-  />
-</a>
-`;
-
 exports[`<Logo /> should render the logo in the header 1`] = `
-<a
-  href="/"
->
-  <img
-    alt="Logo da Netshoes."
-    class="h-6 w-auto object-contain sm:h-8"
-    height="521"
-    src="/img/png/logo.png"
-    width="4096"
-  />
-</a>
-`;
-
-exports[`<Logo /> should render the logo in the header. 1`] = `
 <a
   href="/"
 >
