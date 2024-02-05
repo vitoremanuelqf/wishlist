@@ -15,19 +15,3 @@ exports[`<Footer /> should render the copyright message in the footer 1`] = `
   </div>
 </footer>
 `;
-
-exports[`<Footer /> should render the heading 1`] = `
-<footer
-  class="mt-auto flex h-auto w-full justify-center bg-[#5b2b84]"
->
-  <div
-    class="flex h-auto w-full max-w-7xl items-center justify-center gap-2 px-4 py-2 sm:px-8"
-  >
-    <p
-      class="text-center text-xs text-white"
-    >
-      Wishlist • 2024 | Todos os direitos reservados
-    </p>
-  </div>
-</footer>
-`;
