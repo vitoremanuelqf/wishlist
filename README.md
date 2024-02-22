@@ -144,7 +144,6 @@
   <h3>Estou à disposição para esclarecer dúvidas, receber sugestões ou lidar com críticas. Não hesite em entrar em contato!</h3>
 
   <p>Email: vitoremanuelqf@gmail.com</p>
-  <p>WhatsApp: (15) 99605-5714</p>
   <p>LinkedIn: <a href="https://www.linkedin.com/in/vitoremanuelqf">https://www.linkedin.com/in/vitoremanuelqf</a></p>
 
   <h3>Obrigado pela oportunidade!</h3>
